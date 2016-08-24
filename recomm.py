@@ -45,3 +45,7 @@ popularity_recomm = popularity_model.recommend(users=range(1,6),k=5)
 popularity_recomm.print_rows(num_rows=25)
 
 #print ratings_base.groupby(by='movie_id')['rating'].mean().sort_values(ascending=False).head(20)
+
+model_performance = graphlab.compare(test_data, [popularity_model])
+
+graphlab.show_comparison(model_performance,[popularity_model])
