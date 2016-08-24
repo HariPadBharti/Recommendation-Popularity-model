@@ -30,7 +30,6 @@ ratings_base = pd.read_csv('ml-100k/ub.base',sep='\t',names=r_cols,encoding='lat
 
 ratings_test = pd.read_csv('ml-100k/ub.test',sep='\t',names=r_cols,encoding='latin-1')
 
-
 #print ratings_base.shape 
 
 #print ratings_test.shape
@@ -46,13 +45,3 @@ popularity_recomm = popularity_model.recommend(users=range(1,6),k=5)
 popularity_recomm.print_rows(num_rows=25)
 
 #print ratings_base.groupby(by='movie_id')['rating'].mean().sort_values(ascending=False).head(20)
-
-#item_sim_model = graphlab.item_similarity_recommender.create(train_data,user_id='user_id',item_id='movie_id',target='rating',similarity_type='pearson')
-
-#item_sim_recomm = item_sim_model.recommend(users=range(1,100),k=20)
-
-#item_sim_recomm.print_rows(num_rows=2000)
-
-
-
-
